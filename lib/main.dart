@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:safety/constants/constants.dart';
 import 'package:safety/http/request_util.dart';
+import 'package:safety/page/login/login_page.dart';
 import 'package:safety/page/main_page/main_page.dart';
 import 'package:safety/page/welcome/welcome_page.dart';
 import 'package:safety/provider/user_provider.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/WelcomePage': (context) => const WelcomePage(),
         '/MainPage': (context) => const MainPage(),
+        '/LoginPage': (context) => const LoginPage(),
       }
     );
   }
