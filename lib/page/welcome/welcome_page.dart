@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 ///欢迎页
@@ -45,9 +46,9 @@ class _WelcomePageState extends State<WelcomePage> {
              crossAxisAlignment: CrossAxisAlignment.center,
              mainAxisAlignment: MainAxisAlignment.center,
              children: const [
-               Text('安全第一',  style: TextStyle(color: Colors.white, fontSize: 18, decoration: TextDecoration.none),),
+               AutoSizeText('安全第一', maxFontSize: 18, style: TextStyle(color: Colors.white,  decoration: TextDecoration.none),),
                SizedBox(width: 30,),
-               Text('预防为主',  style: TextStyle(color: Colors.white, fontSize: 18, decoration: TextDecoration.none),),
+               AutoSizeText('预防为主', maxFontSize: 18, style: TextStyle(color: Colors.white, decoration: TextDecoration.none),),
              ],
            ),
            const SizedBox(height: 20,),
@@ -55,9 +56,9 @@ class _WelcomePageState extends State<WelcomePage> {
              crossAxisAlignment: CrossAxisAlignment.center,
              mainAxisAlignment: MainAxisAlignment.center,
              children: const [
-               Text('以人为本',  style: TextStyle(color: Colors.white, fontSize: 18, decoration: TextDecoration.none),),
+               AutoSizeText('以人为本',  maxFontSize: 18,style: TextStyle(color: Colors.white,  decoration: TextDecoration.none),),
                SizedBox(width: 30,),
-               Text('全员参与',  style: TextStyle(color: Colors.white, fontSize: 18, decoration: TextDecoration.none),),
+               AutoSizeText('全员参与', maxFontSize: 18, style: TextStyle(color: Colors.white, decoration: TextDecoration.none),),
              ],
            ),
            const SizedBox(height: 20,),
@@ -65,9 +66,9 @@ class _WelcomePageState extends State<WelcomePage> {
              crossAxisAlignment: CrossAxisAlignment.center,
              mainAxisAlignment: MainAxisAlignment.center,
              children: const [
-               Text('科学发展',  style: TextStyle(color: Colors.white, fontSize: 18, decoration: TextDecoration.none),),
+               AutoSizeText('科学发展', maxFontSize: 18, style: TextStyle(color: Colors.white, decoration: TextDecoration.none),),
                SizedBox(width: 30,),
-               Text('持续改进',  style: TextStyle(color: Colors.white, fontSize: 18, decoration: TextDecoration.none),),
+               AutoSizeText('持续改进', maxFontSize: 18, style: TextStyle(color: Colors.white, decoration: TextDecoration.none),),
              ],
            ),
            Expanded(child:
