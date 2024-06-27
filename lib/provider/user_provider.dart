@@ -61,6 +61,25 @@ class UserInfo with ChangeNotifier {
     _phone = User().getPhone();
   }
 
+  ///用户手机号码
+  String _pwd = '';
+
+  String get pwd => _pwd;
+
+  set setPwd(String value) {
+    _pwd = value;
+    savePwd(value);
+  }
+
+  void savePwd(String value) {
+    _pwd = value;
+    User().savePwd(value);
+  }
+
+  void getPwd() {
+    _pwd = User().getPwd();
+  }
+
   ///用户id
   String _userId = '';
 
@@ -96,6 +115,8 @@ class UserInfo with ChangeNotifier {
 
     _phone = User().getPhone();
 
+    _pwd = User().getPwd();
+
     _userId = User().getUserId();
 
     _agreement = User().getAgreement();
@@ -110,6 +131,8 @@ class UserInfo with ChangeNotifier {
 
     _userId = '';
 
+    _pwd = '';
+
     User().clearUserInfo();
 
     notifyListeners();
@@ -119,5 +142,6 @@ class UserInfo with ChangeNotifier {
     saveToken('');
     saveUserId('');
     saveUserName('');
+    savePhone('');
   }
 }

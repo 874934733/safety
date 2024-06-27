@@ -22,6 +22,9 @@ class Constant {
   /// 用户手机号码
   static const String phone = 'phone';
 
+  /// 用户密码
+  static const String pwd = 'pwd';
+
   /// 请求token
   static const String token = 'token';
 

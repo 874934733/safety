@@ -64,6 +64,23 @@ class User {
     return phone;
   }
 
+  ///用户密码
+  String pwd = '';
+
+  void savePwd(String value) {
+    pwd = value;
+    SpUtil.putStr(Constant.pwd, value);
+  }
+
+  String getPwd() {
+    SpUtil.getStr(Constant.pwd).then((value) {
+      if (value != null) {
+        pwd = value;
+      }
+    });
+    return pwd;
+  }
+
   ///用户名
   String userId = '';
 
@@ -101,6 +118,7 @@ class User {
   void clearUserInfo() {
     SpUtil.putStr(Constant.token, '');
     SpUtil.putStr(Constant.phone, '');
+    SpUtil.putStr(Constant.pwd, '');
     SpUtil.putStr(Constant.userId, '');
     SpUtil.putStr(Constant.auditStatus, '');
     token = '';

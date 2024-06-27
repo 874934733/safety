@@ -32,7 +32,8 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Stack(children: [
+    return Scaffold(
+        body: Stack(children: [
       Image.asset(
         "assets/images/icon_welcome_page.png",
         width: size.width,
@@ -166,7 +167,7 @@ class _WelcomePageState extends State<WelcomePage> {
           ],
         ),
       )
-    ]);
+    ]));
   }
 
   void startCountdown() async {
