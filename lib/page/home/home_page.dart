@@ -1,8 +1,10 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:banner_carousel/banner_carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
+import 'package:safety/page/home/course/course_page.dart';
+import 'package:safety/page/home/main/main_page.dart';
+import 'package:safety/page/home/my/my_page.dart';
+import 'package:safety/page/home/task/task_page.dart';
+import 'package:safety/util/hextocolor.dart';
 
 ///欢迎页
 class HomePage extends StatefulWidget {
@@ -13,96 +15,69 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  ///轮播图
-  List<BannerModel> bannerList = [];
+  int _selectedIndex = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    _getHomeBanner();
-  }
+  final List<Widget> _pages = const <Widget>[
+    MainPage(),
+    CoursePage(),
+    TaskPage(),
+    MyPage(),
+  ];
 
-  @override
-  void dispose() {
-    super.dispose();
+  // 分别定义选中和未选中的图标路径
+  final Map<int, String> _unselectedIcons = {
+    0: 'assets/images/icon_tab_one_black.png',
+    1: 'assets/images/icon_tab_two_black.png',
+    2: 'assets/images/icon_tab_three_black.png',
+    3: 'assets/images/icon_tab_four_black.png',
+  };
+
+  final Map<int, String> _selectedIcons = {
+    0: 'assets/images/icon_tab_one_blue.png',
+    1: 'assets/images/icon_tab_two_blue.png',
+    2: 'assets/images/icon_tab_three_blue.png',
+    3: 'assets/images/icon_tab_four_blue.png',
+  };
+
+  final List<String> _pagesTitle = <String>[
+    '首页',
+    '课程',
+    '任务',
+    '我的',
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-        value: const SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.light, // 或Brightness.light
-          statusBarIconBrightness: Brightness.light, // 控制图标颜色
-        ),
-        child: Scaffold(
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    Image.asset(
-                      'assets/images/icon_home_top_bg.png',
-                      width: size.width,
-                      fit: BoxFit.fill, // 完全填充
-                      height: 200,
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          alignment: Alignment.topCenter,
-                          margin: const EdgeInsets.only(top: 27),
-                          child: const AutoSizeText(
-                            '首页',
-                            minFontSize: 18,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                decoration: TextDecoration.none),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(
-                              top: 16, left: 21, right: 21),
-                          width: size.width,
-                          height: 146,
-                          child: Swiper(
-                            itemBuilder: (BuildContext context, int index) {
-                              return ClipRRect(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  child: Image.asset(
-                                    bannerList[index].imagePath,
-                                    fit: BoxFit.fill,
-                                  ));
-                            },
-                            itemCount: bannerList.length,
-                            autoplay: true,
-                            pagination: const SwiperPagination(
-                                builder: DotSwiperPaginationBuilder(
-                                    color: Color(0xFFFFFFFF),
-                                    size: 6,
-                                    activeColor: Color(0xFFFF4646))),
-                            // control: const SwiperControl(),//< >
-                          ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ));
-  }
-
-  ///获取轮播图内容
-  void _getHomeBanner() async {
-    bannerList
-        .add(BannerModel(imagePath: 'assets/images/icon_banner.png', id: '1'));
-    bannerList
-        .add(BannerModel(imagePath: 'assets/images/icon_banner.png', id: '2'));
-    bannerList
-        .add(BannerModel(imagePath: 'assets/images/icon_banner.png', id: '3'));
-    setState(() {});
+    return Scaffold(
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _pages,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: List.generate(_unselectedIcons.length, (index) {
+          // 根据选中状态动态选择图标路径
+          final iconPath = _selectedIndex == index
+              ? _selectedIcons[index]!
+              : _unselectedIcons[index]!;
+          return BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage(iconPath)),
+            label: _pagesTitle[index], // 如果不需要显示文字，可以留空
+          );
+        }),
+        currentIndex: _selectedIndex,
+        selectedItemColor: HexToColor('#467DFF'),
+        unselectedItemColor: Colors.black,
+        selectedFontSize: 9,
+        unselectedFontSize: 9,
+        onTap: _onItemTapped,
+      ),
+    );
   }
 }
