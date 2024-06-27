@@ -1,0 +1,99 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hdsk.safety"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->C:\Users\admin\StudioProjects\safety\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->C:\Users\admin\StudioProjects\safety\android\app\src\debug\AndroidManifest.xml:7:22-64
+16    <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!-- suppress DeprecatedClassUsageInspection -->
+16-->[:local_auth_android] D:\flutter\flutter_windows_3.3.0-stable\flutter\.pub-cache\hosted\mirrors.tuna.tsinghua.edu.cn%47dart-pub%47\local_auth_android-1.0.31\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-72
+16-->[:local_auth_android] D:\flutter\flutter_windows_3.3.0-stable\flutter\.pub-cache\hosted\mirrors.tuna.tsinghua.edu.cn%47dart-pub%47\local_auth_android-1.0.31\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-69
+17    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+17-->[androidx.biometric:biometric:1.1.0] C:\Users\admin\.gradle\caches\transforms-3\c44a989e5c50bfc6cf434d229b546c7f\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
+17-->[androidx.biometric:biometric:1.1.0] C:\Users\admin\.gradle\caches\transforms-3\c44a989e5c50bfc6cf434d229b546c7f\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
+18
+19    <permission
+19-->[androidx.core:core:1.10.1] C:\Users\admin\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+20        android:name="com.hdsk.safety.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+20-->[androidx.core:core:1.10.1] C:\Users\admin\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+21        android:protectionLevel="signature" />
+21-->[androidx.core:core:1.10.1] C:\Users\admin\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+22
+23    <uses-permission android:name="com.hdsk.safety.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+23-->[androidx.core:core:1.10.1] C:\Users\admin\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+23-->[androidx.core:core:1.10.1] C:\Users\admin\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+24
+25    <application
+26        android:name="android.app.Application"
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.10.1] C:\Users\admin\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+28        android:debuggable="true"
+29        android:icon="@mipmap/ic_launcher"
+30        android:label="safety" >
+31        <activity
+32            android:name="com.hdsk.safety.MainActivity"
+33            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+34            android:exported="true"
+35            android:hardwareAccelerated="true"
+36            android:launchMode="singleTop"
+37            android:theme="@style/LaunchTheme"
+38            android:windowSoftInputMode="adjustResize" >
+39
+40            <!--
+41                 Specifies an Android theme to apply to this Activity as soon as
+42                 the Android process has started. This theme is visible to the user
+43                 while the Flutter UI initializes. After that, this theme continues
+44                 to determine the Window background behind the Flutter UI.
+45            -->
+46            <meta-data
+47                android:name="io.flutter.embedding.android.NormalTheme"
+48                android:resource="@style/NormalTheme" />
+49
+50            <intent-filter>
+51                <action android:name="android.intent.action.MAIN" />
+52
+53                <category android:name="android.intent.category.LAUNCHER" />
+54            </intent-filter>
+55        </activity>
+56        <!--
+57             Don't delete the meta-data below.
+58             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+59        -->
+60        <meta-data
+61            android:name="flutterEmbedding"
+62            android:value="2" />
+63
+64        <activity
+64-->[:url_launcher_android] D:\flutter\flutter_windows_3.3.0-stable\flutter\.pub-cache\hosted\mirrors.tuna.tsinghua.edu.cn%47dart-pub%47\url_launcher_android-6.0.38\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+65            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+65-->[:url_launcher_android] D:\flutter\flutter_windows_3.3.0-stable\flutter\.pub-cache\hosted\mirrors.tuna.tsinghua.edu.cn%47dart-pub%47\url_launcher_android-6.0.38\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+66            android:exported="false"
+66-->[:url_launcher_android] D:\flutter\flutter_windows_3.3.0-stable\flutter\.pub-cache\hosted\mirrors.tuna.tsinghua.edu.cn%47dart-pub%47\url_launcher_android-6.0.38\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+67            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+67-->[:url_launcher_android] D:\flutter\flutter_windows_3.3.0-stable\flutter\.pub-cache\hosted\mirrors.tuna.tsinghua.edu.cn%47dart-pub%47\url_launcher_android-6.0.38\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+68
+69        <uses-library
+69-->[androidx.window:window:1.0.0-beta04] C:\Users\admin\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+70            android:name="androidx.window.extensions"
+70-->[androidx.window:window:1.0.0-beta04] C:\Users\admin\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+71            android:required="false" />
+71-->[androidx.window:window:1.0.0-beta04] C:\Users\admin\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+72        <uses-library
+72-->[androidx.window:window:1.0.0-beta04] C:\Users\admin\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+73            android:name="androidx.window.sidecar"
+73-->[androidx.window:window:1.0.0-beta04] C:\Users\admin\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+74            android:required="false" />
+74-->[androidx.window:window:1.0.0-beta04] C:\Users\admin\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+75    </application>
+76
+77</manifest>
